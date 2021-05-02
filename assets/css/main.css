@@ -1,0 +1,468 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+html {
+	font-size: 62.5%;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root {
+	--font-size: 1.6rem;
+	--font-ubuntu: 'Ubuntu', sans-serif;
+	--font-overpass: 'Overpass', sans-serif;
+	--color-primary: #ff525d;
+	--color-primary-light: #ff7a85;
+	--color-dark-blue: #1f3f5b;
+	--color-light: #ffffff;
+	--color-gray-blue: #c8c8cb;
+	--color-dark-gray: #4b5862;
+	--color-dark: #25252d;
+	--linear-primary: linear-gradient(
+		125deg,
+		rgba(255, 143, 112, 0.9),
+		rgba(255, 82, 93, 0.9)
+	);
+
+	--linear-dark: linear-gradient(
+		var(--color-dark-gray-blue),
+		var(var(--color-dark-blue))
+	);
+}
+
+body {
+	font-size: var(--font-size);
+	font-family: var(--font-overpass);
+	background-color: var(--color-light);
+	color: var(--color-dark-blue);
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	width: 90%;
+	max-width: 120rem;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+button {
+	cursor: pointer;
+	border-radius: 2.5rem;
+	border: transparent;
+	padding: 0 1.5rem;
+	background: var(--color-light);
+	color: var(--color-primary);
+	font-weight: bold;
+	transition: 0.3s linear;
+	height: 3.5rem;
+}
+button:hover {
+	background: var(--color-primary-light);
+	color: var(--color-light);
+}
+button.hero-buttons-outline {
+	background: transparent;
+	border: 0.1rem solid var(--color-light);
+	color: var(--color-light);
+}
+button.hero-buttons-outline:hover {
+	background: var(--color-light);
+	color: var(--color-primary);
+}
+button.button-text {
+	background: transparent;
+	color: var(--color-dark);
+}
+button.button-gradient {
+	background: var(--linear-primary);
+	color: var(--color-light);
+}
+
+.angle-bottom {
+	transform: rotate(90deg);
+}
+.angle-top {
+	transform: rotate(-90deg);
+}
+
+section {
+	padding: 6rem 5%;
+}
+
+.grid {
+	display: grid;
+}
+.grid-item {
+	width: 100%;
+}
+
+@media screen and (min-width: 800px) {
+	section {
+		padding: 10rem 10%;
+	}
+	.grid {
+		grid-template: auto / repeat(2, 1fr);
+		column-gap: 10rem;
+	}
+}
+
+.section-title {
+	margin-top: 4rem;
+	font-size: 2.8rem;
+}
+.section-description {
+	margin-top: 2rem;
+	color: var(--color-dark-blue);
+	line-height: 3rem;
+}
+
+/* ESTILOS PARA EL HERO */
+.hero {
+	position: relative;
+	background: var(--linear-primary), url('../images/bg-pattern-intro.svg');
+	min-height: 75vh;
+	background-repeat: no-repeat;
+	background-position: 35% 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 8rem 0;
+	border-radius: 0 0 0 8rem;
+}
+.menu {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding: 4rem 5%;
+}
+.menu-icon {
+	color: var(--color-light);
+	font-size: 2.5rem;
+	cursor: pointer;
+}
+.menu-logo {
+	height: 3rem;
+}
+.menu-logo img {
+	height: 100%;
+}
+
+.menu-nav {
+	background: var(--color-light);
+	border-radius: 0.8rem;
+	position: fixed;
+	width: 90%;
+	padding: 4rem;
+	overflow-y: auto;
+	top: 10rem;
+	height: 80vh;
+	display: none;
+	flex-direction: column;
+	row-gap: 2rem;
+	align-items: center;
+	box-shadow: 0 0 1rem 0 rgba(37, 37, 45, 0.4);
+	transition: 0.3s ease;
+}
+.menu-nav.active {
+	display: flex;
+}
+.menu-nav-item {
+	cursor: pointer;
+	font-weight: bold;
+	width: 100%;
+	text-align: center;
+}
+.menu-nav-item i {
+	color: var(--color-primary);
+	margin-left: 0.5rem;
+}
+.list-link {
+	display: none;
+	flex-direction: column;
+	background: var(--color-gray-blue);
+	width: 100%;
+	padding: 2rem;
+	border-radius: 0.5rem;
+	row-gap: 1.5rem;
+	margin-top: 2rem;
+	transition: 0.3s linear;
+}
+.list-link.active {
+	display: flex;
+}
+.list-link a {
+	color: var(--color-dark-gray);
+	text-decoration: none;
+}
+.menu-nav-buttons {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	row-gap: 1rem;
+	margin-top: 4rem;
+}
+.menu-nav-buttons .hr {
+	width: 100%;
+	height: 0.2rem;
+	background: var(--color-gray-blue);
+	border-radius: 0.5rem;
+}
+.menu-nav-buttons button {
+	width: 15rem;
+}
+
+.hero .container {
+	color: var(--color-light);
+	text-align: center;
+	padding: 6rem 0;
+}
+.hero-title {
+	font-size: 3.2rem;
+	font-weight: 600;
+}
+.hero-description {
+	margin: 2rem 0 4rem;
+}
+.hero-buttons {
+	display: flex;
+	justify-content: center;
+	column-gap: 2rem;
+}
+@media screen and (min-width: 800px) {
+	.menu-icon {
+		display: none;
+	}
+	.menu-nav {
+		position: initial;
+		display: flex;
+		height: 3rem;
+		overflow: initial;
+		flex-direction: row;
+		column-gap: 2rem;
+		transition: none;
+		background: transparent;
+		box-shadow: none;
+		margin-left: 6rem;
+		width: 100%;
+		padding: 0;
+		align-items: center;
+	}
+	.menu-nav-item {
+		width: initial;
+		display: flex;
+		column-gap: 0.5rem;
+		position: relative;
+		color: var(--color-light);
+		height: 100%;
+		align-items: center;
+	}
+	.list-link {
+		position: absolute;
+		width: initial;
+		left: 0;
+		top: 100%;
+		background: var(--color-light);
+	}
+	.list-link a:hover {
+		color: #111111;
+	}
+	.menu-nav-buttons {
+		flex-direction: row;
+		margin-top: 0;
+		justify-content: flex-end;
+	}
+	.menu-nav-buttons .hr {
+		display: none;
+	}
+	.menu-nav-buttons .button-text {
+		color: var(--color-light);
+	}
+}
+@media screen and (min-width: 900px) {
+	.hero .container {
+		padding: 10rem 0;
+	}
+	.hero-title {
+		font-size: 5rem;
+	}
+}
+/* ESTILOS PARA EL HERO */
+
+/* ESTILOS PARA DESIGNED */
+.designed {
+	width: 100%;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+.designed-title {
+	text-align: center;
+	margin-bottom: 4rem;
+	font-size: 3rem;
+}
+.designed-content {
+	order: 3;
+	text-align: center;
+}
+.d .designed figure {
+	order: 2;
+	width: 100%;
+}
+.designed figure img {
+	width: 100%;
+}
+@media screen and (min-width: 800px) {
+	.designed {
+		grid-template: repeat(2, auto) / repeat(2, 1fr);
+		align-self: center;
+		padding-left: 10%;
+		padding-right: 10%;
+	}
+	.designed-title {
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+	.designed-content {
+		order: 1;
+		text-align: left;
+	}
+	.designed figure {
+		order: 3;
+		display: block;
+		margin: auto;
+	}
+}
+/* ESTILOS PARA DESIGNED */
+
+/* ESTILOS PARA EL STATE */
+.state {
+	width: 100%;
+	min-height: 50vh;
+	padding: 4rem 5% 8rem;
+	margin: 20rem 0 5rem;
+	background: var(--color-dark-blue) url('../images/bg-pattern-circles.svg');
+	background-position: center 200%;
+	background-repeat: no-repeat;
+	background-size: 180%;
+	row-gap: 5%;
+	border-radius: 0 8rem 0 8rem;
+}
+.state .grid-item {
+	justify-content: center;
+}
+.state figure {
+	width: 90%;
+	margin-top: -20rem;
+}
+.state figure img {
+	width: 100%;
+}
+.state-content {
+	text-align: center;
+}
+.state-title {
+	color: var(--color-light);
+	font-size: 3rem;
+	margin-bottom: 2rem;
+}
+.state-description {
+	color: var(--color-gray-blue);
+}
+@media screen and (min-width: 400px) {
+	.state {
+		background-position: center 150%;
+	}
+}
+@media screen and (min-width: 600px) {
+	.state {
+		padding: 4rem 10% 8rem;
+		background-position: center 120%;
+	}
+}
+@media screen and (min-width: 800px) {
+	.state {
+		padding: 0 10%;
+		background-position: -20% 120%;
+		background-size: 60%;
+		height: 20rem;
+		row-gap: 0;
+		align-content: center;
+	}
+	.state figure {
+		margin-top: 0;
+		width: 100%;
+	}
+	.state .grid-item {
+		align-self: center;
+	}
+	.state-content {
+		text-align: left;
+		margin: 0;
+	}
+}
+@media screen and (min-width: 1000px) {
+	.state {
+		background-position: 0% 110%;
+		background-size: 45%;
+	}
+}
+/* ESTILOS PARA EL STATE */
+
+/* ESTILOS PARA LAPTOP */
+.laptop figure {
+	width: 100%;
+}
+.laptop figure img {
+	width: 100%;
+}
+/* ESTILOS PARA LAPTOP */
+
+/* ESTILOS PARA EL FOOTER */
+.footer {
+	background-color: var(--color-dark);
+	color: var(--color-gray-blue);
+	padding: 6rem 0;
+	border-radius: 0 8rem 0 0;
+}
+.footer .container {
+	display: grid;
+	justify-content: center;
+	row-gap: 4rem;
+}
+.footer-logo {
+	margin-bottom: 6rem;
+}
+.footer-list {
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1rem;
+}
+.footer-list-special {
+	margin-bottom: 2rem;
+	font-weight: bolder;
+	font-size: 1.7rem;
+	color: var(--color-light);
+}
+
+/* estructura de los media querys */
+@media screen and (min-width: 1000px) {
+	.footer .container {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-rows: 1fr;
+		column-gap: 15rem;
+	}
+}
+/* ESTILOS PARA EL FOOTER */
