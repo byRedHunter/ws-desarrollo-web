@@ -182,6 +182,7 @@ section {
 	font-weight: bold;
 	width: 100%;
 	text-align: center;
+	text-transform: uppercase;
 }
 .menu-nav-item i {
 	color: var(--color-primary);
